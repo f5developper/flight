@@ -1,152 +1,44 @@
-<head>
-    <title>Todo List</title>
-</head>
-
 <body>
-    <nav class="">
-        <div class="nav-group">
-            <a class="nav-item js-back" href="#"><span class="icon-arrow-left-alt"></span></a>
-            <a class="nav-item js-menu" href="#"><span class="icon-menu"></span></a>
-        </div>
-
-        <div class="title-page">
-            フライト検索
-            <span class="subtext-page">値段</span>
-        </div>
-
-        <div class="nav-group right">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">すかいなんちゃら</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">ホーム</a></li>
+                    <li><a href="#">マイページ</a></li>
+                    <li><a href="#">問い合わせ</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+
     <div class="container">
-        <form class="form-horizontal">
-            <!--            <div class="col-sm-2"><h3>出発</h3></div>-->
-            <div class="form-group">
-                <label class="col-sm-2 control-label">日にち</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-                </div>
-                <label class="col-sm-2 control-label">日にち</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-                </div>
+            {{> flight_query}}
+            <div class="row plan-header">
+            <div class="col-md-2">
+                出発日
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">時刻</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </div>
-                <label class="col-sm-2 control-label">時刻</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </div>
+            <div class="col-md-2">
+                航空会社
             </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 control-label">日にち</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-                </div>
-                <label class="col-sm-2 control-label">日にち</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-                </div>
+            <div class="col-md-2">
+                金額
             </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">時刻</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </div>
-                <label class="col-sm-2 control-label">時刻</label>
-                <div class="col-sm-4">
-                    <select class="form-control">
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                    </select>
-                </div>
+            <div class="col-md-2">
+                出発地
             </div>
-
-            <div class="checkbox form-group">
-                <label class="checkbox-inline col-sm-offset-2">
-                    <input type="checkbox" value="peach">PEACH
-                </label>
-                <label class="checkbox-inline">
-                    <input type="checkbox" value="skymark">スカイマーク
-                </label>                    
-                <label class="checkbox-inline">
-                    <input type="checkbox" value="sorasid">ソラシドエラー
-                </label>                    
+            <div class="col-md-2">
+                到着地
             </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-3">
-                    <button type="submit" class="btn btn-primary col-sm-4">この検索条件で探す</button>
-                </div>
-                <div class="">
-                    <button type="submit" class="btn btn-warning col-sm-4">値段に変更があったら通知</button>
-                </div>
-            </div>
-        </form>
+        </div>
         {{#each flights}}
         {{> flight}}
         {{/each}}
@@ -155,10 +47,17 @@
 
 <template name="flight">
     <div class="row">
-        <span>{{flight_date}}</span>
-        <span>{{airline_company}}</span>
-        <span>{{amount}}</span>
-        <span>{{arrivals}}</span>
-        <span>{{departures}}</span>
+        <div class="col-md-2">
+
+            {{flight_date}}
+        </div>
+        <div class="col-md-2">
+            {{airline_company}}</div>
+        <div class="col-md-2">
+            {{amount}}</div>
+        <div class="col-md-2">
+            {{arrivals}}</div>
+        <div class="col-md-2">
+            {{departures}}</div>
     </div>
 </template>

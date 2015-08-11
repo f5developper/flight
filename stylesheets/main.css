@@ -1,0 +1,22 @@
+.flight_query_form{
+    background-color:white;
+    padding-top:10px;
+    padding-left:10px;
+    margin-bottom:50px;
+    padding-right:10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+body {
+    padding-top:120px;
+}
+
+.plan-header{
+    background-color: #004d40;
+    color:white;
+    font-weight: bold;
+    padding :15px;
+}
+

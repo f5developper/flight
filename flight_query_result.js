@@ -1,34 +1,39 @@
 
 flights = new Mongo.Collection("flights");
 
-
 if (Meteor.isClient) {
-  // This code only runs on the client
-  Template.body.helpers({
-    flights: [
-      { 
-          flight_date: "2015年1月10日",
-          airline_company: "スカイマーク",
-          amount: "5000円",
-          arrivals: "成田",
-          departures: "千歳",
-      },
-      { 
-          flight_date: "2015年1月10日",
-          airline_company: "PEACH",
-          amount: "6000円",
-          arrivals: "成田",
-          departures: "千歳",
-      },
-      { 
-          flight_date: "2015年1月10日",
-          airline_company: "ソラシドエラー",
-          amount: "7000円",
-          arrivals: "成田",
-          departures: "千歳",
-      }
-    ]
-  });
+    $(function () {
+        $('#arraivalDate').datepicker({
+            format: 'yyyy/mm/dd'
+        });
+    })
+
+    // This code only runs on the client
+    Template.body.helpers({
+        flights: [
+            {
+                flight_date: "2015年1月10日",
+                airline_company: "スカイマーク",
+                amount: "5000円",
+                arrivals: "成田",
+                departures: "千歳",
+            },
+            {
+                flight_date: "2015年1月10日",
+                airline_company: "PEACH",
+                amount: "6000円",
+                arrivals: "成田",
+                departures: "千歳",
+            },
+            {
+                flight_date: "2015年1月10日",
+                airline_company: "ソラシドエラー",
+                amount: "7000円",
+                arrivals: "成田",
+                departures: "千歳",
+            }
+        ]
+    });
 }
 
 //
