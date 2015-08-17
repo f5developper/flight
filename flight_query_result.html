@@ -1,0 +1,35 @@
+<template name="flight_query_result">
+    <div class="row plan-header">
+        <div class="col-md-2">
+            出発日
+        </div>
+        <div class="col-md-2">
+            航空会社
+        </div>
+        <div class="col-md-2">
+            金額
+        </div>
+        <div class="col-md-2">
+            出発地
+        </div>
+        <div class="col-md-2">
+            到着地
+        </div>
+    </div>
+    {{#each flights}}
+    <div class="row">
+        <div class="col-md-2">
+            {{formatDate leavedAt}}
+        </div>
+        <div class="col-md-2">
+            {{airlineCompanyName}}</div>
+        <div class="col-md-2">
+            {{amount}}</div>
+        <div class="col-md-2">
+            {{formatDateTime leavedAt}}</div>
+        <div class="col-md-2">
+            {{formatDateTime arrivalAt}}</div>
+    </div>
+    {{/each}}
+
+</template>

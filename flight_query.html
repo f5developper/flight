@@ -3,7 +3,7 @@
             <div class="form-group">
                 <label class="col-md-1 control-label">出発地</label>
                 <div class="col-md-3">
-                    <select class="form-control">
+                    <select class="form-control" id="leaved_port">
                         {{#each air_lines}}
                           <option value="{{key}}">{{name}}</option>
                         {{/each}}
@@ -11,14 +11,10 @@
                 </div>
                 <label class="col-md-1 control-label">到着地</label>
                 <div class="col-md-3">
-                    <select class="form-control">
+                    <select class="form-control" id="arrival_port">
                         {{#each air_lines}}
                           <option value="{{key}}">{{name}}</option>
                         {{/each}}
-<!--                        <option value="1">羽田</option>
-                        <option value="2">成田</option>
-                        <option value="3">千歳</option>
-                        <option value="4">福岡</option>-->
                     </select>
                 </div>
                 <label class="col-md-1 control-label">出発日</label>
@@ -29,10 +25,10 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-3">
-                    <button type="submit" class="btn btn-primary col-md-4">この検索条件で探す</button>
+                    <button type="submit" id="search" class="btn btn-primary col-md-4">この検索条件で探す</button>
                 </div>
                 <div class="">
-                    <button type="submit" class="btn btn-warning col-md-4">値段に変更があったら通知</button>
+                    <button type="submit"  id="monitor" class="btn btn-warning col-md-4">値段に変更があったら通知</button>
                 </div>
             </div>
         </form>
