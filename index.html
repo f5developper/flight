@@ -16,13 +16,16 @@
                     <li><a href="#">マイページ</a></li>
                     <li><a href="#">問い合わせ</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="signin_link">{{> loginButtons}}</li>
+                </ul>
             </div>
         </div>
     </nav>
-8月16日以外検索禁止
+    8月16日以外検索禁止
     <div class="container">
-            {{> flight_query}}
-            {{> flight_query_result}}
-   </div>
+        {{> flight_query}}
+        {{> flight_query_result}}
+    </div>
 </body>
 

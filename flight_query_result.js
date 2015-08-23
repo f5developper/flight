@@ -21,7 +21,6 @@ if (Meteor.isClient) {
                     query['leavedAt'] = {"$gte":from.toDate(),"$lt":to.toDate()};
                 }
 
-                console.log(query);
                 return Flight_info.find(query);
             } else {
                 return Flight_info.find();

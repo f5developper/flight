@@ -20,3 +20,14 @@ body {
     padding :15px;
 }
 
+.signin_link{
+    padding-top: 20px;
+    padding-bottom: 20px;    
+}
+
+.login-link-text{
+    color:white;
+}
+.login-link-text:hover{
+    color:white;
+}
