@@ -13,3 +13,4 @@ fezvrasta:bootstrap-material-design
 mrt:normalize.css
 momentjs:moment
 accounts-google
+iron:router

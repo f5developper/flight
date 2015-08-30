@@ -1,0 +1,12 @@
+<template name="my_page">
+    <div>あなたの今監視している情報です</div>
+    {{#each user_notice}}
+    <div>
+        <dl><dt><span>出発する日</span>{{leavedAt}}</dt>
+            <dd><span>出発地</span>{{leavedPort}}</dd>
+            <dd><span>到着地</span>{{arrivalPort}}</dd>
+            <dd><span>登録したときのお金</span>{{amount}}</dd>
+        </dl>
+    </div>
+    {{/each}}
+</template>

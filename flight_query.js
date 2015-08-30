@@ -3,14 +3,14 @@ if (Meteor.isClient) {
 
     Meteor.subscribe("air_lines");
     Meteor.subscribe("flight_info");
+    Meteor.subscribe("notification");
 
 
-    $(function () {
+    Template.flight_query.onRendered(function () {
         $('#arraivalDate').datepicker({
             dateFormat: 'yy/mm/dd'
         });
-
-    })
+    });
 
     Template.flight_query.helpers({
         air_lines: function () {
@@ -25,7 +25,10 @@ if (Meteor.isClient) {
             var $leavedPort = $('#leaved_port');
             var $arrivalPort = $('#arrival_port');
             var $leavedAt = $('#arraivalDate');
+            var $lowerPrice = $('#lowerPrice');
 
+            $lowerPrice.val(5000);
+            $lowerPrice.show();
 
             Session.set("leavedFrom", $leavedPort.val());
             Session.set("arrivalTo", $arrivalPort.val());
@@ -36,12 +39,19 @@ if (Meteor.isClient) {
             var $leavedPort = $('#leaved_port');
             var $arrivalPort = $('#arrival_port');
             var $leavedAt = $('#arraivalDate');
+            var $lowerPrice = $('#lowerPrice');
 
-            if (Meteor.user() !== undefined) {
+            if (Meteor.user() != undefined) {
                 user = Meteor.user();
-                console.log(user._id);
-                console.log(user.emails);
-                console.log(Meteor.user());
+                user._id;
+                console.log(Notification.insert(
+                        {userId: user._id,
+                            leavedPort: $leavedPort.val(),
+                            arrivalPort: $arrivalPort.val(),
+                            leavedAt: $leavedAt.val(),
+                            amount: $lowerPrice.val(),
+                            isNotice: "1"
+                        }));
             }
 
         },
