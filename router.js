@@ -1,5 +1,9 @@
+Router.configure({
+    layoutTemplate: 'app_body'
+});
+
 Router.route('/', function () {
-  this.render('home');
+  this.render('flight_query');
 });
 
 Router.route('/my_page', function () {

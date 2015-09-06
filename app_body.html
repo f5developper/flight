@@ -1,5 +1,5 @@
 <!--<body>-->
-<template name="home">
+<template name="app_body">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -13,8 +13,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">ホーム</a></li>
-                    <li><a href="./my_page">マイページ</a></li>
+                    <li class="active"><a href="./">ホーム</a></li>
+                    <li id ="my_page"><a href="./my_page">マイページ</a></li>
                     <li><a href="#">問い合わせ</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -23,10 +23,10 @@
             </div>
         </div>
     </nav>
-    8月16日以外検索禁止
     <div class="container">
-        {{> flight_query}}
-        {{> flight_query_result}}
+        {{> yield}}
+<!--        {{> flight_query}}
+        {{> flight_query_result}}-->
     </div>
 <!--</body>-->
 </template>
