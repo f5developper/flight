@@ -31,3 +31,11 @@ body {
 .login-link-text:hover{
     color:white;
 }
+
+dd{
+    float:left;
+}
+
+dd.activity{
+   clear:both; 
+}
