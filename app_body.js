@@ -5,5 +5,13 @@ if(Meteor.isClient){
         }
 
     });
-    
+    Template.app_body.events({
+        'click #my_page': function(event){
+            if(Meteor.user() ===null ){
+                event.preventDefault();
+                Meteor.loginWithGoogle();
+            }
+        }
+    });
+//my_page    
 }

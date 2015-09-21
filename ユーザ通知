@@ -1,1 +1,1 @@
-userID,amount,出発地、到着地,出発日
+userId,leavedPort,leavedPortName,arrivalPort,arrivalPortName,leavedAt,amount,isNotice,shown,activities
