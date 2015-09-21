@@ -1,4 +1,5 @@
 <template name="flight_query_result">
+    {{#if flights}}
     <div class="row plan-header">
         <div class="col-md-2">
             出発日
@@ -31,5 +32,5 @@
             {{formatDateTime arrivalAt}}</div>
     </div>
     {{/each}}
-
+    {{/if}}
 </template>

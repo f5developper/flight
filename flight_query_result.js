@@ -22,9 +22,10 @@ if (Meteor.isClient) {
                 }
 
                 return Flight_info.find(query);
-            } else {
-                return Flight_info.find();
             }
+//            } else {
+//                return Flight_info.find();
+//            }
 
         }
     });

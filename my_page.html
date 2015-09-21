@@ -1,23 +1,20 @@
 <template name="my_page">
     <h3>あなたの今監視している情報です</h3>
     {{#each user_notice}}
-    <div class="clearfix">
-        <dl><dt><span>出発する日:</span>{{leavedAt}}</dt>
+    <div class="clearfix shadow-z-1 activity-container">
+        <dl class ="activity-section"><dt><span class="depature-day">出発日:</span>{{leavedAt}}</dt>
             <dd class=""><span>出発地:</span>{{leavedPortName}}</dd>
             <dd><span>到着地:</span>{{arrivalPortName}}</dd>
-            <dd><span>登録したときのお金:</span>{{amount}}</dd>
-            <dd><span>現在の金額:</span>{{amount}}</dd>
-            <dd class = "activity"><dl><dt>金額のアクティビティ</dt>
-                    <dd>
-                        <div><ul>
-                                <li><a>skymarkの13:30分初の飛行機が5000円になりました</a></li>
-                                <li><a>jetstarの14:30分初の飛行機が6000円になりました</a></li>
-                            </ul>
-                        </div>
-                    </dd>
-                </dl>
-            </dd>
+            <dd><span>あなたが登録した金額:</span>{{amount}}円</dd>
         </dl>
-    </div>
+        <dl class="activity"><dt>アクティビティ</dt>
+            <dd>
+                <div><ul>
+                        <li><a>skymarkの13:30分初の飛行機が5000円になりました</a></li>
+                        <li><a>jetstarの14:30分初の飛行機が6000円になりました</a></li>
+                    </ul>
+                </div>
+            </dd>
+        </dl>    </div>
     {{/each}}
 </template>

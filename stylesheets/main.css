@@ -12,7 +12,12 @@
 body {
     padding-top:120px;
 }
-
+.main-contents{
+    color:#757576 !important
+}
+#lowerPrice{
+    padding-bottom:5px;
+}
 .plan-header{
     background-color: #004d40;
     color:white;
@@ -31,11 +36,62 @@ body {
 .login-link-text:hover{
     color:white;
 }
-
+.activity-section{
+    margin-bottom:15px;    
+}
 dd{
     float:left;
+    margin-right:5px;
 }
 
-dd.activity{
-   clear:both; 
+.activity{
+    clear:both; 
+    margin-top:10px;
+    margin-bottom:5px;
+
+}
+.activity-section span:first-child{
+    padding-left:0px;    
+    padding-right:5px;    
+}
+.activity-section span{
+    padding-left:5px;    
+    padding-right:5px;    
+}
+.activity-container{
+    width:70%;
+    margin-bottom:10px;
+    padding:5px;
+}
+.activity-section span {font-weight: 700;}
+
+footer{
+    margin-top:40px;
+    padding:16px 40px;
+    color:#9e9e9e;
+    background-color:#424242;
+    font-size:14px;
+}
+footer .footer-contents{
+    float:left;
+    width:33%;
+    line-height: 23px;
+}
+footer .footer-contents h5{
+    font-weight: 500;
+    margin-bottom:16px;
+    color:#e0e0e0;
+}
+footer .footer-service-list{
+    list-style-type: none;
+    padding:0;
+}
+.footer-detail{
+    margin-top:24px;
+    margin-right:5px;
+}
+
+.footer-detail a{
+    
+    color:inherit;
 }
