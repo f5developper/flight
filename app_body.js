@@ -13,5 +13,5 @@ if(Meteor.isClient){
             }
         }
     });
-//my_page    
+//my_page
 }
