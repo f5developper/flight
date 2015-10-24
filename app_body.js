@@ -4,7 +4,7 @@ if(Meteor.isClient){
             return Notification.find({shown:'0'}).count();
         }
 
-    });
+    });aaa
     Template.app_body.events({
         'click #my_page': function(event){
             if(Meteor.user() ===null ){
@@ -13,5 +13,5 @@ if(Meteor.isClient){
             }
         }
     });
-//my_page    
+//my_page
 }
