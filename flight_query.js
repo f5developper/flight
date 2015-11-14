@@ -13,7 +13,18 @@ if (Meteor.isClient) {
 
     Template.flight_query.helpers({
         air_lines: function () {
-            return Air_lines.find();
+          var optgroup = {};
+var lines = Air_lines.find();
+         for(line in lines){
+           if(line.region.region_code in optgroup){
+             optgroup[line.region.region_code].push(line);
+           }else{
+             optgroup['region_name'] = [];
+             optgroup['region_name'] = [];
+               optgroup[line.region.region_code].push(line);
+           }
+         }
+            return optgroup;
         }
 
     });

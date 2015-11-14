@@ -4,16 +4,19 @@
             <label class="col-md-1 control-label">出発地</label>
             <div class="col-md-3">
                 <select class="form-control" id="leaved_port">
+
+                    <optgroup label="{{region.region_name}}">
                     {{#each air_lines}}
-                    <option value="{{key}}">{{name}}</option>
+                    <option value="{{code}}">{{airport.airport_name}}</option>
                     {{/each}}
+                    </optgroup>
                 </select>
             </div>
             <label class="col-md-1 control-label">到着地</label>
             <div class="col-md-3">
                 <select class="form-control" id="arrival_port">
                     {{#each air_lines}}
-                    <option value="{{key}}">{{name}}</option>
+                    <option value="{{code}}">{{airport.airport_name}}</option>
                     {{/each}}
                 </select>
             </div>
