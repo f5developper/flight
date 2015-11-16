@@ -13,17 +13,21 @@ if (Meteor.isClient) {
 
     Template.flight_query.helpers({
         air_lines: function () {
-          var optgroup = {};
-var lines = Air_lines.find();
-         for(line in lines){
-           if(line.region.region_code in optgroup){
-             optgroup[line.region.region_code].push(line);
-           }else{
-             optgroup['region_name'] = [];
-             optgroup['region_name'] = [];
-               optgroup[line.region.region_code].push(line);
-           }
-         }
+            var optgroup = [];
+
+            var lines = Air_lines.find().fetch();
+
+            /**
+             * air_lineコレクションからoptroupに適した形に変換
+             */
+            $.each(lines, function (index, line) {
+                if (optgroup.hasOwnProperty(line.region.region_code) === false) {
+                    optgroup[line.region.region_code] = [];
+                    optgroup[line.region.region_code]["region_name"] = line.region.region_name;
+                    optgroup[line.region.region_code]["regions"] = [];
+                }
+                optgroup[line.region.region_code]["regions"].push(line);
+            });
             return optgroup;
         }
 
