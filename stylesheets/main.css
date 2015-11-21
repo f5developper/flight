@@ -115,7 +115,7 @@ footer .footer-service-list{
     color: white;
     border-top-right-radius:20px;
     border-top-left-radius:20px;
-    position:absolute;
+    position:relative;
     
 }
 
@@ -123,9 +123,9 @@ footer .footer-service-list{
     width:100px;
     height:100px;
     backgrond-color:black;
-    opacity: 0.5;
+/*    opacity: 0.5;*/
     color:white;
-    position:relative;
+    position:absolute;
     left:0px;
     bottom:0px;
     z-index:1000;
