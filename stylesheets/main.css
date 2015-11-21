@@ -92,6 +92,71 @@ footer .footer-service-list{
 }
 
 .footer-detail a{
-    
+
     color:inherit;
+}
+
+.recommend_hokkaido{
+    background-repeat: no-repeat;
+    background-image: url("./hokkaido.jpg");
+    height:427px;
+    background-size:50% 50%;
+    color: white;
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+
+}
+.recommend_tokyo{
+    width:641px;
+    background-repeat: no-repeat;
+    background-image: url("./tokyo.jpg");
+    height:360px;
+/*    background-size:50% 50%;*/
+    color: white;
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+    position:absolute;
+    
+}
+
+.comment{
+    width:100px;
+    height:100px;
+    backgrond-color:black;
+    opacity: 0.5;
+    color:white;
+    position:relative;
+    left:0px;
+    bottom:0px;
+    z-index:1000;
+}
+.recommend_kyoto{
+    background-repeat: no-repeat;
+    background-image: url("./kyoto.jpg");
+    height:427px;
+    background-size:50% 50%;
+    color: white;
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+
+}
+.recommend_kyushu{
+    background-repeat: no-repeat;
+    background-image: url("./miyazaki.jpg");
+    height:427px;
+    background-size:50% 50%;
+    color: white;
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+
+}
+.recommend_okinawa{
+    background-repeat: no-repeat;
+    background-image: url("./okinawa.jpg");
+    height:427px;
+    background-size:50% 50%;
+    color: white;
+    border-top-right-radius:20px;
+    border-top-left-radius:20px;
+
 }
