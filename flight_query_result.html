@@ -2,34 +2,34 @@
     {{#if flights}}
     <div class="row plan-header">
         <div class="col-md-2">
-            出発日
-        </div>
-        <div class="col-md-2">
             航空会社
         </div>
         <div class="col-md-2">
             金額
         </div>
-        <div class="col-md-3">
-            出発地
+        <div class="col-md-2">
+            出発時刻
         </div>
         <div class="col-md-3">
-            到着地
+            到着時刻
+        </div>
+        <div class="col-md-3">
+            プラン
         </div>
     </div>
     {{#each flights}}
     <div class="row">
         <div class="col-md-2">
-            {{formatDate leavedAt}}
+            {{airlineCompanyName}}
         </div>
         <div class="col-md-2">
-            {{airlineCompanyName}}</div>
-        <div class="col-md-2">
             {{amount}}</div>
-        <div class="col-md-3">
+        <div class="col-md-2">
             {{formatDateTime leavedAt}}</div>
         <div class="col-md-3">
             {{formatDateTime arrivalAt}}</div>
+        <div class="col-md-3">
+            {{flightPlan}}</div>
     </div>
     {{/each}}
     {{/if}}

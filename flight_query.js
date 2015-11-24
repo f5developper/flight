@@ -4,7 +4,6 @@ if (Meteor.isClient) {
     Meteor.subscribe("air_lines");
     Meteor.subscribe("flight_info");
     Meteor.subscribe("notification");
-
     Template.flight_query.onRendered(function () {
         $('#arraivalDate').datepicker({
             dateFormat: 'yy/mm/dd'
