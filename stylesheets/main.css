@@ -48,6 +48,7 @@ dd{
     clear:both;
     margin-top:10px;
     margin-bottom:5px;
+    margin-left:10px;
 
 }
 .activity-section span:first-child{
@@ -58,13 +59,25 @@ dd{
     padding-left:5px;
     padding-right:5px;
 }
+
+.activity-section dt,dd{
+    margin: 10px 10px 10px 10px;
+
+}
 .activity-container{
     width:70%;
     margin-bottom:10px;
     padding:5px;
+    background-color:white;
 }
 .activity-section span {font-weight: 700;}
 
+.activity li{
+    list-style: none;
+    padding-bottom:3px;
+    cursor: pointer;
+    
+}
 footer{
     margin-top:40px;
     padding:16px 40px;
