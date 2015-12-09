@@ -4,7 +4,7 @@ if (typeof Meteor.settings === 'undefined')
 _.defaults(Meteor.settings, {
     google: {
         consumerKey: "559535785491-17vakl4ljhm0v3nhquennobd7e100r2h.apps.googleusercontent.com",
-        secret: "1-BzPFYl3_lYqeHYXMi2EDSo"
+        secret: "zvwLqFBHcRvju2cgKWqyIf6L"
     }
 });
 
