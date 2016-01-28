@@ -76,7 +76,7 @@ dd{
     list-style: none;
     padding-bottom:3px;
     cursor: pointer;
-    
+
 }
 footer{
     margin-top:40px;
@@ -110,7 +110,7 @@ footer .footer-service-list{
 }
 
 .comment{
-    width:300px;
+    width:200px;
     height:40px;
     background-size:100% 100%;
     background-color:black;
@@ -125,7 +125,7 @@ footer .footer-service-list{
     background-repeat: no-repeat;
     background-image: url("./tokyo.jpg");
     display: inline-block;
-    width:300px;
+    width:200px;
     height:180px;
     background-size:100% 100%;
     color: white;
@@ -140,7 +140,7 @@ footer .footer-service-list{
     background-repeat: no-repeat;
     background-image: url("./hokkaido.jpg");
     display: inline-block;
-    width:300px;
+    width:200px;
     height:180px;
     background-size:100% 100%;
     color: white;
@@ -155,7 +155,7 @@ footer .footer-service-list{
     background-repeat: no-repeat;
     background-image: url("./kyoto.jpg");
     display: inline-block;
-    width:300px;
+    width:200px;
     height:180px;
     background-size:100% 100%;
     color: white;
@@ -170,7 +170,7 @@ footer .footer-service-list{
     background-repeat: no-repeat;
     background-image: url("./miyazaki.jpg");
     display: inline-block;
-    width:300px;
+    width:200px;
     height:180px;
     background-size:100% 100%;
     color: white;
@@ -185,7 +185,7 @@ footer .footer-service-list{
     background-repeat: no-repeat;
     background-image: url("./okinawa.jpg");
     display: inline-block;
-    width:300px;
+    width:200px;
     height:180px;
     background-size:100% 100%;
     color: white;
@@ -195,4 +195,3 @@ footer .footer-service-list{
     left: 20px;
 
 }
-
