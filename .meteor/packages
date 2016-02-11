@@ -16,3 +16,5 @@ accounts-google
 iron:router
 email
 service-configuration
+mrt:cron
+meteorhacks:ssr

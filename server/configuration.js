@@ -8,6 +8,33 @@ _.defaults(Meteor.settings, {
     }
 });
 
+
+Meteor.startup(function () {
+    process.env.MAIL_URL = "smtp://postmaster%40sandbox27288175dea1468ebe3092572eca7f71.mailgun.org:ghorstworld@smtp.mailgun.org:587";
+    var noticeAmount = function () {
+        var parameters = {
+            from: "silvet2275@gmail.com",
+            to: "silvet2275@gmail.com",
+            subject: "2月22日の",
+        };
+
+        var tmpl = SSR.compileTemplate('emailText', Assets.getText('notice.txt'));
+        parameters.text = tmpl.renderFunction();
+console.log(parameters);
+//        (function (parameters) {
+//            Email.send(parameters);
+//        })(parameters);
+
+    }
+
+    var cron = new Meteor.Cron({
+        events: {
+            "* * * * *": noticeAmount
+        }
+    });
+
+});
+
 ServiceConfiguration.configurations.upsert(
         {service: "google"},
 {

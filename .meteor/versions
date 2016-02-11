@@ -41,6 +41,7 @@ localstorage@1.0.3
 logging@1.0.7
 meteor@1.1.6
 meteor-platform@1.2.2
+meteorhacks:ssr@2.1.2
 minifiers@1.1.5
 minimongo@1.0.8
 mizzao:build-fetcher@0.2.0
@@ -48,6 +49,7 @@ mizzao:jquery-ui@1.11.4
 mobile-status-bar@1.0.3
 momentjs:moment@2.10.6
 mongo@1.1.0
+mrt:cron@0.0.1
 mrt:normalize.css@2.0.1
 npm-bcrypt@0.7.8_2
 oauth@1.1.4
