@@ -21,7 +21,7 @@ Meteor.startup(function () {
         var tmpl = SSR.compileTemplate('emailText', Assets.getText('notice.txt'));
         parameters.text = tmpl.renderFunction();
         (function (parameters) {
-            Email.send(parameters);
+//            Email.send(parameters);
         })(parameters);
 
     }
