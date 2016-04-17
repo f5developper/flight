@@ -1,5 +1,5 @@
 
-Meteor.subscribe("air_lines");
+var air_lines_handle = Meteor.subscribe("air_lines");
 Meteor.subscribe("flight_info");
 Meteor.subscribe("notification");
 Template.flight_query.onRendered(function () {
@@ -12,20 +12,23 @@ Template.flight_query.helpers({
     air_lines: function () {
         var optgroup = [];
 
-        var lines = Air_lines.find().fetch();
+        if (air_lines_handle.ready()) {
+            var lines = Air_lines.find({}, {reactive: true}).fetch();
 
-        /**
-         * air_lineコレクションからoptroupに適した形に変換
-         */
-        $.each(lines, function (index, line) {
-            if (optgroup.hasOwnProperty(line.region.region_code) === false) {
-                optgroup[line.region.region_code] = [];
-                optgroup[line.region.region_code]["region_name"] = line.region.region_name;
-                optgroup[line.region.region_code]["regions"] = [];
-            }
-            optgroup[line.region.region_code]["regions"].push(line);
-        });
-        return optgroup;
+            /**
+             * air_lineコレクションからoptroupに適した形に変換
+             */
+            $.each(lines, function (index, line) {
+                if (optgroup.hasOwnProperty(line.region.region_code) === false) {
+                    optgroup[line.region.region_code] = [];
+                    optgroup[line.region.region_code]["region_name"] = line.region.region_name;
+                    optgroup[line.region.region_code]["regions"] = [];
+                }
+                optgroup[line.region.region_code]["regions"].push(line);
+            });
+
+            return optgroup;
+        }
     }
 
 });
@@ -71,7 +74,6 @@ Template.flight_query.events({
         }
     },
     "mouseover .flight_query_form": function (event) {
-//            event.target.addClass("shadow-z-4");
 
         $(".flight_query_form").addClass("shadow-z-4");
     }

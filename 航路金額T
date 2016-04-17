@@ -5,8 +5,8 @@ leavedFrom : "1",
 leavedFromName : "羽田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:1000 
 });
 
@@ -17,8 +17,8 @@ leavedFrom : "1",
 leavedFromName : "羽田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:2000 
 });
 
@@ -29,8 +29,8 @@ leavedFrom : "1",
 leavedFromName : "羽田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:3000 
 });
 
@@ -41,8 +41,8 @@ leavedFrom : "2",
 leavedFromName : "成田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:1000 
 });
 
@@ -53,8 +53,8 @@ leavedFrom : "2",
 leavedFromName : "成田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:2000 
 });
 
@@ -65,8 +65,8 @@ leavedFrom : "2",
 leavedFromName : "成田", 
 arrivalTo : "3", 
 arrivalToName : "福岡", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:3000 
 });
 
@@ -77,8 +77,8 @@ leavedFrom : "3",
 leavedFromName : "福岡", 
 arrivalTo : "1", 
 arrivalToName : "羽田", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:3000 
 });
 
@@ -89,7 +89,7 @@ leavedFrom : "3",
 leavedFromName : "福岡", 
 arrivalTo : "2", 
 arrivalToName : "成田", 
-leavedAt: ISODate("2015-08-16T13:30:00+09:00"), 
-arrivalAt : ISODate("2015-08-16T16:30:00+09:00"), 
+leavedAt: ISODate("2016-02-16T13:30:00+09:00"), 
+arrivalAt : ISODate("2016-02-16T16:30:00+09:00"), 
 amount:3000 
 });
