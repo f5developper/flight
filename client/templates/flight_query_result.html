@@ -23,7 +23,11 @@
             {{airlineCompanyName}}
         </div>
         <div class="col-md-2">
-            {{amount}}</div>
+            {{#each amount}}
+            <p>{{key}}</p>
+            <p>{{amount}}</p>
+            {{/each}}
+        </div>
         <div class="col-md-2">
             {{formatDateTime leavedAt}}</div>
         <div class="col-md-3">

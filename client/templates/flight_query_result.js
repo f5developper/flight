@@ -13,8 +13,9 @@ Template.flight_query_result.helpers({
                 query['arrivalTo'] = Session.get("arrivalTo");
             }
             if (Session.get("leavedAt")) {
-                var from = moment(Session.get("leavedAt"), 'YYYY/MM/DD');
-                var to = moment(Session.get("leavedAt"), 'YYYY/MM/DD').add(1, 'days');
+                var from = moment(Session.get("leavedAt"), 'YYYY-MM-DD');
+                var to = moment(Session.get("leavedAt"), 'YYYY-MM-DD').add(1, 'days');
+               
                 query['leavedAt'] = {"$gte": from.toDate(), "$lt": to.toDate()};
             }
 
