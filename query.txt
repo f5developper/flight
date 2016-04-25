@@ -1,0 +1,36 @@
+// db.getCollection('flight_info').aggregate([
+// {$match:{"leavedAt": {"$gte":ISODate("2016-04-24")}}},
+// {$unwind:"$amount"},
+// {$group: {_id:{leavedAt:"$leavedAt",flightId:"$flightId"}, lowerPrice:{$min:"$amount.amount"}}}
+// ]);
+// 
+
+
+db.getCollection('flight_info').aggregate([
+{$match:{"leavedAt": {"$gte":ISODate("2016-04-24")}}},
+//  {$project:{flightId:1,amount:1,createdAt:{$dateToString:{format:"%Y-%m-%d",date:"$createdAt"}}}},
+  {$project:{flightId:1,amount:1,createdAt:1}}, 
+  {$unwind:"$amount"},
+  {$group: {_id:"$flightId",createdAt:{$max:"$createdAt"},lowerPrice:{$min:"$amount.amount"}}},
+  {$sort: {lowerPrice:1}}
+ ]);
+
+db.flight_info.find({});
+// ,arrivalAt:{$dateToString:{format:"%Y-%m-%d",date:"$arrivalAt"}},leavedAt:{$dateToString:{format:"%Y-%m-%d",date:"$leavedAt"}}
+ 
+db.getCollection('flight_info').aggregate({$project:{"dateStr": {$concat:["aaa","-","cccc"]}}})
+
+db.getCollection('flight_info').group({
+    key:{flightId:1},
+    reduce:function(curr,result){
+        curr.amount.forEach(function(value,key){
+            if(result.lowerPrice > value.amount){
+                result.lowerPrice = value.amount;
+                }
+            })
+        },
+        initial:{lowerPrice:1000000,}
+    });
+    
+    
+   db.flight_info.findOne({},{"amount.amount"});

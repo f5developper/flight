@@ -12,3 +12,6 @@ Template.app_body.events({
         }
     }
 });
+Temlate.app_body.rendered = function(){
+    $.material.init();
+}

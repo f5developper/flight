@@ -17,10 +17,11 @@ Meteor.startup(function () {
             to: "int_adachi@intworks.co.jp",
             subject: "2月22日の",
         };
-
+        
         var tmpl = SSR.compileTemplate('emailText', Assets.getText('notice.txt'));
         parameters.text = tmpl.renderFunction();
         (function (parameters) {
+            console.log("aaaaa");
 //            Email.send(parameters);
         })(parameters);
 
@@ -28,6 +29,7 @@ Meteor.startup(function () {
 
     var cron = new Meteor.Cron({
         events: {
+            //分　時　日　月　曜日
             "* * * * *": noticeAmount
         }
     });
