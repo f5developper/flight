@@ -5,9 +5,17 @@
 // ]);
 // 
 
+//             {$match: {"leavedFrom": leavedFrom, "arrivalTo": arrivalTo, }},
+//             {$project: {flightId: 1, amount: 1, createdAt: 1}},
+//             {$unwind: "$amount"},
+//             {$group: {_id: "$flightId", createdAt: {$max: "$createdAt"}, lowerPrice: {$min: "$amount.amount"}}},
+//             {$sort: {lowerPrice: 1}}
+// 
+
 
 db.getCollection('flight_info').aggregate([
-{$match:{"leavedAt": {"$gte":ISODate("2016-04-24")}}},
+   {$match: {"leavedFrom": "KIX", "arrivalTo": "CTS" , "leavedAt": {"$gte": ISODate("2016-06-30T00:00:00+09:00"), "$lt": ISODate("2016-07-01T00:00:00+09:00")}}},
+// {$match:{"leavedAt": {"$gte":ISODate("2016-04-24")}}},
 //  {$project:{flightId:1,amount:1,createdAt:{$dateToString:{format:"%Y-%m-%d",date:"$createdAt"}}}},
   {$project:{flightId:1,amount:1,createdAt:1}}, 
   {$unwind:"$amount"},

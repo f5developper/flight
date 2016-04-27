@@ -1,5 +1,4 @@
 <template name="flight_query_result">
-    {{#if flights}}
     <div class="row plan-header">
         <div class="col-md-2">
             航空会社
@@ -20,7 +19,7 @@
     {{#each flights}}
     <div class="row">
         <div class="col-md-2">
-            {{airlineCompanyName}}
+            {{airlineCompanyName}}{{flightId}}
         </div>
         <div class="col-md-2">
             {{#each amount}}
@@ -33,8 +32,8 @@
         <div class="col-md-3">
             {{formatDateTime arrivalAt}}</div>
         <div class="col-md-3">
-            {{flightPlan}}</div>
+            {{flightPlan}}
+        </div>
     </div>
     {{/each}}
-    {{/if}}
 </template>

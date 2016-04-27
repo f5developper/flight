@@ -6,7 +6,6 @@ Template.flight_query_result.helpers({
     flights: function () {
         if (Session.get("leavedFrom") || Session.get("arrivalTo") || Session.get("leavedAt")) {
             Meteor.subscribe("aggregateLowerPrice", Session.get("leavedFrom"), Session.get("arrivalTo"), Session.get("leavedAt"));
-            console.log(aggregateLowerPrice.find());
             return aggregateLowerPrice.find();
         }
 
