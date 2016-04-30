@@ -68,7 +68,7 @@ Template.flight_query.events({
                         arrivalPortName: arrivalPortName,
                         leavedAt: $leavedAt.val(),
                         amount: $lowerPrice.val(),
-                        isNotice: "1",
+                        isNotice: "0",
                         shown: "0",
                     });
         }
