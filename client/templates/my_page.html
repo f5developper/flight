@@ -5,13 +5,14 @@
         <dl class ="activity-section"><dt><span class="depature-day">出発日:</span>{{leavedAt}}</dt>
             <dd><span>出発地:</span>{{leavedPortName}}</dd>
             <dd><span>到着地:</span>{{arrivalPortName}}</dd>
-            <dd><span>登録した金額:</span>{{amount}}円</dd>
+            <dd><span>登録した金額:</span>{{noticeAmount}}円</dd>
         </dl>
         <dl class="activity"><dt>アクティビティ</dt>
             <dd>
                 <div><ul>
-                        <li><a>skymarkの13:30分初の飛行機が5000円になりました</a></li>
-                        <li><a>jetstarの14:30分初の飛行機が6000円になりました</a></li>
+                        {{#each prices}}
+                        <li><a>{{airlineCompanyName}}の{{formatDateTime leavedAt}}分初の飛行機が{{amount}}円になりました</a></li>
+                        {{/each}}
                     </ul>
                 </div>
             </dd>

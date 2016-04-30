@@ -23,7 +23,7 @@ Meteor.startup(function () {
             (function (parameters) {
                 Email.send(parameters);
                 Notification.update(
-                        {userId: notice.userId}, {isNotice: '0'}
+                        {userId: notice.userId}, {$set: {isNotice: '0'}}
                 );
             })(parameters);
         });

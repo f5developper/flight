@@ -66,8 +66,9 @@ Template.flight_query.events({
                         leavedPortName: leavedPortName,
                         arrivalPort: $arrivalPort.val(),
                         arrivalPortName: arrivalPortName,
-                        leavedAt: $leavedAt.val(),
-                        amount: $lowerPrice.val(),
+                        leavedAt: moment($leavedAt.val()).toDate(),
+                        noticeAmount: $lowerPrice.val(),
+                        prices:[],
                         isNotice: "0",
                         shown: "0",
                     });
