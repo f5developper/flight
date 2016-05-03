@@ -1,6 +1,7 @@
 Meteor.startup(function () {
 
     var noticeAmount = function () {
+        console.log("aaaa");
         Notification.find({isNotice: '1'}).fetch().forEach(function (notice) {
 
             var user = Meteor.users.findOne({_id: notice.userId});
@@ -18,8 +19,10 @@ Meteor.startup(function () {
                 subject: "航空券の値段に変更がありました",
             };
 
-            var tmpl = SSR.compileTemplate('emailText', Assets.getText('notice.txt'));
-            parameters.text = tmpl.renderFunction();
+            SSR.compileTemplate('emailText', Assets.getText('notice.txt'));
+            
+            var leavedAt = moment(notice.leavedAt);
+            parameters.text = SSR.render("emailText",{flightTime:leavedAt.format('YYYY年MM月DD日'),url:Meteor.absoluteUrl()});
             (function (parameters) {
                 Email.send(parameters);
                 Notification.update(
@@ -32,7 +35,7 @@ Meteor.startup(function () {
     var cron = new Meteor.Cron({
         events: {
 //分　時　日　月　曜日
-            "* * * * *": noticeAmount
+            "*/5 7-22 * * *": noticeAmount
         }
     });
 });
