@@ -1,7 +1,6 @@
 Meteor.startup(function () {
 
     var noticeAmount = function () {
-        console.log("aaaa");
         Notification.find({isNotice: '1'}).fetch().forEach(function (notice) {
 
             var user = Meteor.users.findOne({_id: notice.userId});
