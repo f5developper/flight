@@ -8,7 +8,7 @@ Template.index.events({
     'click #my_page': function (event) {
         if (Meteor.user() === null) {
             event.preventDefault();
-            Meteor.loginWithGoogle();
+//            Meteor.loginWithGoogle();
         }
     }
 });

@@ -11,11 +11,12 @@ Meteor.publish('aggregateLowerPrice', function (leavedFrom, arrivalTo, flightDat
         {$project: {flightId: 1, amount: 1, createdAt: 1}},
         {$unwind: "$amount"},
         {$group: {_id: "$flightId", createdAt: {$max: "$createdAt"}, lowerPrice: {$min: "$amount.amount"}}},
-        {$sort: {lowerPrice: 1}}
-    ]);
+        {$sort: {lowerPrice: 1, }}]);
 
     lowerFlights.forEach(function (lowerFlight, key) {
-        self.added('aggregateLowerPrice', Random.id(), Flight_info.findOne({flightId: lowerFlight._id, createdAt: lowerFlight.createdAt, "amount.amount": lowerFlight.lowerPrice}));
+        if (lowerFlight._id) {
+            self.added('aggregateLowerPrice', Random.id(), Flight_info.findOne({flightId: lowerFlight._id, createdAt: lowerFlight.createdAt, "amount.amount": lowerFlight.lowerPrice}));
+        }
     });
 
 });
