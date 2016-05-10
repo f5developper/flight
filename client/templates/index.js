@@ -1,6 +1,6 @@
 
 var air_lines_handle = Meteor.subscribe("air_lines");
-Meteor.subscribe("flight_info");
+//Meteor.subscribe("flight_info");
 Meteor.subscribe("notification");
 Template.index.onRendered(function () {
     $('#arraivalDate').datepicker({
