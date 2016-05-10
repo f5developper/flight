@@ -1,10 +1,10 @@
-Template.app_body.helpers({
+Template.index.helpers({
     newly_notice: function () {
         return Notification.find({shown: '0'}).count();
     }
 
 });
-Template.app_body.events({
+Template.index.events({
     'click #my_page': function (event) {
         if (Meteor.user() === null) {
             event.preventDefault();
@@ -12,6 +12,3 @@ Template.app_body.events({
         }
     }
 });
-Template.app_body.rendered = function(){
-    $.material.init();
-}

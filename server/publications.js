@@ -28,4 +28,3 @@ Meteor.publish('air_lines', function () {
 Meteor.publish('notification', function () {
     return Notification.find();
 });
-

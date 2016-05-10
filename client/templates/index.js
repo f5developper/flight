@@ -1,14 +1,14 @@
 
 var air_lines_handle = Meteor.subscribe("air_lines");
-//Meteor.subscribe("flight_info");
+Meteor.subscribe("flight_info");
 Meteor.subscribe("notification");
-Template.flight_query.onRendered(function () {
+Template.index.onRendered(function () {
     $('#arraivalDate').datepicker({
         dateFormat: 'yy/mm/dd'
     });
 });
 
-Template.flight_query.helpers({
+Template.index.helpers({
     air_lines: function () {
         var optgroup = [];
 
@@ -30,10 +30,9 @@ Template.flight_query.helpers({
             return optgroup;
         }
     }
-
 });
 
-Template.flight_query.events({
+Template.index.events({
     "click #search": function (event) {
         event.preventDefault();
         var $leavedPort = $('#leaved_port');
@@ -74,8 +73,4 @@ Template.flight_query.events({
                     });
         }
     },
-    "mouseover .flight_query_form": function (event) {
-
-        $(".flight_query_form").addClass("shadow-z-4");
-    }
 });

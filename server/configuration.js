@@ -11,7 +11,7 @@ _.defaults(Meteor.settings, {
 
 Meteor.startup(function () {
     process.env.MAIL_URL = "smtp://postmaster%40sandbox27288175dea1468ebe3092572eca7f71.mailgun.org:ghorstworld@smtp.mailgun.org:587";
-
+    //process.env.MONGO_URL = "mongodb://root:pK5e8Ecy@160.16.95.237/admin";
 });
 
 ServiceConfiguration.configurations.upsert(

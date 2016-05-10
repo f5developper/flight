@@ -34,7 +34,7 @@ Meteor.startup(function () {
     var cron = new Meteor.Cron({
         events: {
 //分　時　日　月　曜日
-            "* * * * *": noticeAmount
+            "*/5 7-22 * * *": noticeAmount
         }
     });
 });
