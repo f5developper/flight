@@ -43,11 +43,11 @@
                     <div id="detail-2">
                         <table>
                             {{#each amount}}
-                            <tr style="font-size:1rem;border-bottom:1px dotted #bdbdbd;" class="grey-text text-darken-1">
+                            <tr style="font-size:1.2rem;border-bottom:1px dotted #bdbdbd;" class="grey-text text-darken-1">
                                 <td style="width:60%">{{key}}</td>
-                                <td style="color: red;font-weight: bold;text-align: right;">{{amount}}円</td>
+                                <td style="font-size:1.2rem;color: red;font-weight: bold;text-align: right;">{{amount}}円</td>
                                 <td style="text-align: right;">
-                                    <i class="material-icons">add_alert</i>
+                                    <a class="btn-floating yellow darken-2"><i class="material-icons">add_alert</i></a>
                                 </td>
                             </tr>
                             {{/each}}

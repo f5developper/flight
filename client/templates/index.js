@@ -44,33 +44,9 @@ Template.index.events({
         $lowerPrice.show();
 
         Session.set("leavedFrom", $leavedPort.val());
+        Session.set("leavedFromName", $('#leaved_port option:selected').text());
         Session.set("arrivalTo", $arrivalPort.val());
+        Session.set("arrivalToName", $('#arrival_port option:selected').text());
         Session.set("leavedAt", $leavedAt.val());
-    },
-    "click #monitor": function (event) {
-        event.preventDefault();
-        var $leavedPort = $('#leaved_port');
-        var leavedPortName = $('#leaved_port option:selected').text();
-        var $arrivalPort = $('#arrival_port');
-        var arrivalPortName = $('#arrival_port option:selected').text();
-        var $leavedAt = $('#arraivalDate');
-        var $lowerPrice = $('#lowerPrice');
-
-        if (Meteor.user() != undefined) {
-            user = Meteor.user();
-            Notification.insert(
-                    {
-                        userId: user._id,
-                        leavedPort: $leavedPort.val(),
-                        leavedPortName: leavedPortName,
-                        arrivalPort: $arrivalPort.val(),
-                        arrivalPortName: arrivalPortName,
-                        leavedAt: moment($leavedAt.val()).toDate(),
-                        noticeAmount: $lowerPrice.val(),
-                        prices:[],
-                        isNotice: "0",
-                        shown: "0",
-                    });
-        }
     },
 });
