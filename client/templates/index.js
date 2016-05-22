@@ -49,4 +49,35 @@ Template.index.events({
         Session.set("arrivalToName", $('#arrival_port option:selected').text());
         Session.set("leavedAt", $leavedAt.val());
     },
+    "click #previous-day": function (event) {
+        event.preventDefault();
+
+        var searchDate = moment(Session.get("leavedAt"));
+        searchDate.subtract(1, 'days');
+        var $leavedAt = $('#arraivalDate');
+        $leavedAt.val(searchDate.format('YYYY/MM/DD'));
+        $("#search").trigger('click');
+
+    },
+    "click #next-day": function (event) {
+        event.preventDefault();
+
+        var searchDate = moment(Session.get("leavedAt"));
+        searchDate.add(1, 'days');
+        var $leavedAt = $('#arraivalDate');
+        $leavedAt.val(searchDate.format('YYYY/MM/DD'));
+        $("#search").trigger('click');
+    },
+});
+        
+Template.index.helpers({
+    dateIs(when) {
+        var currentDate = Session.get("leavedAt");
+
+        if(when == 'previous'){
+            return moment(currentDate).subtract(1,'days').format('< YYYY年MM月DD日');
+        }else if(when == 'next'){
+            return moment(currentDate).add(1,'days').format('YYYY年MM月DD日 >');
+        }
+    }
 });
