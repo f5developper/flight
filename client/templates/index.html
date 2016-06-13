@@ -10,6 +10,7 @@
             background-position: 50% 50%;
             background-attachment: fixed;
         }
+
         td {
             padding: 3px;
         }
@@ -37,13 +38,17 @@
         <div class="row">
             <div class="col s12">
                 <div class="white-text center-align">
-                    <h1>最安値を<wbr>わかりやすく</h1>
+                    <h1>最安値を
+                        <wbr>
+                        わかりやすく
+                    </h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col s12">
                     <div class="center-align">
-                        <a class="waves-effect waves-light btn indigo darken-4" href="#find" data-type="anchor">使ってみる</a>
+                        <a class="waves-effect waves-light btn indigo darken-4" href="#find"
+                           data-type="anchor">使ってみる</a>
                     </div>
                 </div>
             </div>
@@ -53,11 +58,15 @@
     <div style="background-color:white;height:100%;" id="usage">
         <div class="container">
             <div class="right-align">
-                <a style="top:-27.5px;" class="btn-floating btn-large waves-effect waves-light pink" href="#usage" data-type="anchor"><i class="material-icons dp48">keyboard_arrow_down</i></a>
+                <a style="top:-27.5px;" class="btn-floating btn-large waves-effect waves-light pink" href="#usage"
+                   data-type="anchor"><i class="material-icons dp48">keyboard_arrow_down</i></a>
             </div>
             <div class="row">
                 <div class="col s12">
-                    <h3>お得な旅を&nbsp;<wbr/>もっとお得に</h3>
+                    <h3>お得な旅を&nbsp;
+                        <wbr/>
+                        もっとお得に
+                    </h3>
                 </div>
             </div>
             <div class="row">
@@ -90,22 +99,25 @@
                                 </div>
                                 <div class="row hide" id="increase-day">
                                     <div class="input-field col s6 center-align">
-                                        <a href="javascript:void(0)" id="previous-day">{{dateIs 'previous'}}</a>
-                                        </div>
-                                        <div class="input-field col s6 center-align">
-                                            <a href="javascript:void(0)" id="next-day">{{dateIs 'next'}}</a>
+                                        <a href="javascript:void(0)" id="previous-day"
+                                           style="cursor:pointer;">{{dateIs 'previous'}}</a>
+                                    </div>
+                                    <div class="input-field col s6 center-align">
+                                        <a href="javascript:void(0)" id="next-day"
+                                           style="cursor:pointer;">{{dateIs 'next'}}</a>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <select id="leaved_port" class="browser-default">
                                             <option value="" disabled selected>［発］空港</option>
-                                            {{#each air_lines}}
+                                            {{#each leavedLines}}
                                                 <optgroup label="{{region_name}}">
                                                     {{#each regions}}
                                                         <option value="{{code}}">{{airport.airport_name}}</option>
                                                     {{/each}}
                                                 </optgroup>
+                                            {{else}}
                                             {{/each}}
                                         </select>
                                     </div>
@@ -114,72 +126,149 @@
                                     <div class="input-field col s12">
                                         <select id="arrival_port" class="browser-default">
                                             <option value="" disabled selected>［着］空港</option>
-                                            {{#each air_lines}}
+                                            {{#each arrivalLines}}
                                                 <optgroup label="{{region_name}}">
                                                     {{#each regions}}
                                                         <option value="{{code}}">{{airport.airport_name}}</option>
                                                     {{/each}}
                                                 </optgroup>
+                                            {{else}}
                                             {{/each}}
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-action grey lighten-2 right-align">
-                                <button type="submit" id="search" class="waves-effect waves-light btn indigo darken-4">検索</button>
+                                <button type="submit" id="search" class="waves-effect waves-light btn indigo darken-4">
+                                    検索
+                                </button>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="col s12 m7">
-                    {{> flight_query_result}}
+                    {{#each flights}}
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="card">
+                                    <div class="card-content white-text">
+                                        <div>
+                                            <table>
+                                                <tr>
+                                                    <td style="width:45%;">
+                                                        <img src="/{{airlineCompanyCd}}.png"
+                                                             style="height:30px;max-width:100%;">
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="detail-1">
+                                            <table>
+                                                <tr>
+                                                    <td colspan="3"
+                                                        style="font-size: 1.5rem;color:deepskyblue;margin:0 20px;">{{flightId}}
+                                                        便
+                                                    </td>
+                                                </tr>
+                                                <tr style="font-size:0.9rem;color:darkgray;">
+                                                    <td>{{leavedFromName}}</td>
+                                                    <td>&nbsp;</td>
+                                                    <td>{{arrivalToName}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width:30%;font-size: 2.5rem;color:deepskyblue;">{{leavedFrom}}</td>
+                                                    <td style="width:20%;text-align: left;">
+                                                        <div>
+                                                            <i class="material-icons"
+                                                               style="-webkit-transform: rotate(90deg);font-size:2.5rem;color:deepskyblue;margin-top: 6px;">airplanemode_active</i>
+                                                        </div>
+                                                    </td>
+                                                    <td style="width:30%;font-size: 2.5rem;color:deepskyblue;">{{arrivalTo}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="" style="font-weight: bold;color:rgba(0,0,0,.54);">
+                                                        <span style="font-size: 1.2rem;">{{formatDateTime leavedAt}}</span>
+                                                    </td>
+                                                    <td>&nbsp;</td>
+                                                    <td colspan="" style="font-weight: bold;color:rgba(0,0,0,.54);">
+                                                        <span style="font-size: 1.2rem;">{{formatDateTime arrivalAt}}</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div id="detail-2">
+                                            <table>
+                                                {{#each amount}}
+                                                    <tr style="font-size:1.2rem;border-bottom:1px dotted #bdbdbd;"
+                                                        class="grey-text text-darken-1">
+                                                        <td style="width:60%">{{key}}</td>
+                                                        <td style="font-size:1.2rem;color: red;font-weight: bold;text-align: right;">{{amount}}
+                                                            円
+                                                        </td>
+                                                        <td style="text-align: right;">
+                                                            <a class="btn-floating yellow darken-2"><i
+                                                                    class="material-icons">add_alert</i></a>
+                                                        </td>
+                                                    </tr>
+                                                {{/each}}
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{else}}
+                    {{/each}}
+                    <!--{{> flight_query_result}}-->
                 </div>
             </div>
         </div>
     </div>
 
 
-
-
     <script type="text/javascript">
-$(function(){
-    $('.button-collapse').sideNav();
+        $(function () {
+            $('.button-collapse').sideNav();
 
-    $('a[href^=#][data-type=anchor]').click(function(){
-        var speed = 400;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
-        $("html, body").animate({scrollTop:position}, speed, "swing");
-        return false;
-    });
+            $('a[href^=#][data-type=anchor]').click(function () {
+                var speed = 400;
+                var href = $(this).attr("href");
+                var target = $(href == "#" || href == "" ? 'html' : href);
+                var position = target.offset().top;
+                $("html, body").animate({scrollTop: position}, speed, "swing");
+                return false;
+            });
 
-    var windowHeight = $(window).height();
-    var mainMargin = ((windowHeight - $('#globalNav').height() - $('#main').height()) / 2) - 50;
+            var windowHeight = $(window).height();
+            var mainMargin = ((windowHeight - $('#globalNav').height() - $('#main').height()) / 2) - 50;
 
-    $('#main').css('margin-top', mainMargin + 'px');
-    $('#main').css('margin-bottom', mainMargin + 'px');
-    $('#usage').css('min-height', windowHeight + 'px');
-    $('#find').css('padding-top', '56px');
-    $('#find').css('min-height', (windowHeight - 1) + 'px');
-});
+            $('#main').css('margin-top', mainMargin + 'px');
+            $('#main').css('margin-bottom', mainMargin + 'px');
+            $('#usage').css('min-height', windowHeight + 'px');
+            $('#find').css('padding-top', '56px');
+            $('#find').css('min-height', (windowHeight - 1) + 'px');
+        });
 
-$(window).scroll(function() {
-    var scrollPos = $("body").scrollTop();
-    var guidePos = $('#main').height() + ($('#main').css('margin-top').replace('px','') * 2);
+        $(window).scroll(function () {
+            var scrollPos = $("body").scrollTop();
+            var guidePos = $('#main').height() + ($('#main').css('margin-top').replace('px', '') * 2);
 
-    if (scrollPos <= (guidePos - 2)) {
-        if ($('#globalNav .nav-wrapper').hasClass('indigo')) {
-            $('#globalNav .nav-wrapper').removeClass('indigo');
-            $('#globalNav .nav-wrapper').removeClass('darken-4');
-        };
-    } else {
-        if (!$('#globalNav .nav-wrapper').hasClass('indigo')) {
-            $('#globalNav .nav-wrapper').addClass('indigo');
-            $('#globalNav .nav-wrapper').addClass('darken-4');
-        };
-    };
-});
+            if (scrollPos <= (guidePos - 2)) {
+                if ($('#globalNav .nav-wrapper').hasClass('indigo')) {
+                    $('#globalNav .nav-wrapper').removeClass('indigo');
+                    $('#globalNav .nav-wrapper').removeClass('darken-4');
+                }
+                ;
+            } else {
+                if (!$('#globalNav .nav-wrapper').hasClass('indigo')) {
+                    $('#globalNav .nav-wrapper').addClass('indigo');
+                    $('#globalNav .nav-wrapper').addClass('darken-4');
+                }
+                ;
+            }
+            ;
+        });
     </script>
 
 </template>
